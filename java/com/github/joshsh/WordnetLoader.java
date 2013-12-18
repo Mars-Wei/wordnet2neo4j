@@ -37,7 +37,7 @@ public class WordnetLoader {
 	private void load() throws Exception {
 		Neo4jGraph g = new Neo4jGraph(DEST);
 
-		Sail sail = new GraphSail(g);
+		Sail sail = new GraphSail<Neo4jGraph>(g);
 		sail.initialize();
 		try {
 			SailConnection c = sail.getConnection();
