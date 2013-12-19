@@ -21,12 +21,14 @@ import java.util.zip.GZIPInputStream;
  * @author Joshua Shinavier (http://fortytwo.net)
  */
 public class WordnetLoader {
-	private static final String SOURCE = "/Users/josh/data/shortterm/wordnet-loading/wordnet/rdf";
-	private static final String DEST = "/Users/josh/data/shortterm/wordnet-loading/neo4j";
+	private static String SOURCE = "/Users/sergio/Documents/Research/wordnet/rdf";
+	private static String DEST = "/Users/sergio/Documents/Research/neo4j-community-1.9.4/data/graph.db";
 	private static final long BUFFER_SIZE = 1000;
 
 	public static void main(final String[] args) {
 		try {
+			SOURCE = args[0];
+			DEST = args[1];
 			new WordnetLoader().load();
 		} catch (Throwable e) {
 			e.printStackTrace(System.err);
