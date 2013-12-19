@@ -25,7 +25,7 @@ Assuming $WORDNET_DIR is the folder where you want to download WordNet 3.0 and $
 1. Download WordNet with: cd $WORDNET_DIR ; git clone git://eculture.cs.vu.nl/home/git/vocs/wordnet
 2. Stop the Neo4j server: cd $NEO4J ; bin/neo4j stop
 3. Run WordnetLoader with two arguments:
-```bash
+```
 java -jar target/wordnet2neo4j-0.1.0-SNAPSHOT-standalone.jar $WORDNET_DIR $NEO4J/data/graph.db
 ```
 4. Start the Neo4j server: cd $NEO4J ; bin/neo4j start
