@@ -5,7 +5,9 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :main com.github.joshsh.WordnetLoader
   :dependencies [[org.clojure/clojure "1.5.1"]
+                 [net.kronkltd/plaza "0.2.0-alpha1"]
                  [com.tinkerpop.blueprints/blueprints-neo4j-graph "2.4.0"]
+                 [clojurewerkz/neocons "2.0.0"]
                  [org.openrdf.sesame/sesame-rio-turtle "2.7.8"]
                  [com.tinkerpop.blueprints/blueprints-graph-sail "2.4.0"]]
   :java-source-paths ["java"]
