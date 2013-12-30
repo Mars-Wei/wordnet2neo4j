@@ -45,8 +45,14 @@
 (defn insert-triple [triple]
   (let [subject (get-node (first triple))
         predicate (second triple)
-        object (get-node (nth triple 2))]
-    (nrl/create subject object predicate)))
+        object (get-node (nth triple 2))
+        query-relationship (cy/tquery
+                             (str "START a=node({id1}), b=node({id2}) MATCH (a)-[:`"
+                                  predicate
+                                  "`]->(b) RETURN a, b")
+                             {:id1 (:id subject) :id2 (:id object)})]
+    (if (empty? query-relationship)
+      (nrl/create subject object predicate))))
 
 (defn insert-triple-set [tset]
   (dorun (map insert-triple tset)))
